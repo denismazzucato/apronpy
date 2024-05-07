@@ -6,7 +6,7 @@ APRON Abstract Values (Level 1)
 """
 from _ctypes import Structure, POINTER, byref
 from abc import ABCMeta
-from ctypes import c_size_t, c_char_p, c_bool
+from ctypes import ArgumentError, c_bool, c_char_p, c_size_t
 from typing import List, Type, Union
 
 from apronpy.abstract0 import Abstract0
