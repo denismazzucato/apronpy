@@ -101,8 +101,11 @@ class PyAbstract1(metaclass=ABCMeta):
         return result
 
     def __del__(self):
-        libapron.ap_abstract1_clear(self.manager, self)
-        del self.abstract1
+        try:
+            libapron.ap_abstract1_clear(self.manager, self)
+            del self.abstract1
+        except ArgumentError:
+            pass
 
     @property
     def _as_parameter_(self):
